@@ -13,9 +13,9 @@ rm -f /etc/apt/source.list
 rm -f /etc/apt/sources.list
 
 ##Add aliyun source, you can change to local source
-bash -c 'echo deb http://mirrors.aliyun.com/ubuntu/ $(lsb_release) main multiverse universe restricted > /etc/apt/sources.list.d/mirrorsaliyun.list'
+bash -c 'echo deb http://mirrors.aliyun.com/ubuntu/ $(lsb_release -cs) main multiverse universe restricted > /etc/apt/sources.list.d/mirrorsaliyun.list'
 
-bash -c 'echo deb http://mirrors.aliyun.com/ubuntu/ $(lsb_release)-backports main multiverse universe restricted >> /etc/apt/sources.list.d/mirrorsaliyun.list'
+bash -c 'echo deb http://mirrors.aliyun.com/ubuntu/ $(lsb_release -cs)-backports main multiverse universe restricted >> /etc/apt/sources.list.d/mirrorsaliyun.list'
 
 apt-get autoclean
 
