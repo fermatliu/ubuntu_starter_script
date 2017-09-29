@@ -10,9 +10,12 @@ fi
 
 ##Remove default source 
 rm -f /etc/apt/source.list
+rm -f /etc/apt/sources.list
 
 ##Add archive.ubuntu source, you can change to local source
-bash -c 'echo deb http://us.archive.ubuntu.com/ubuntu/ xenial main multiverse universe restricted > /etc/apt/sources.list.d/mirrorsarchiveubuntu.list'
+bash -c 'echo deb http://us.archive.ubuntu.com/ubuntu/ $(lsb_release) main multiverse universe restricted > /etc/apt/sources.list.d/mirrorsarchiveubuntu.list'
+
+bash -c 'echo deb http://us.archive.ubuntu.com/ubuntu/ $(lsb_release)-backports main multiverse universe restricted >> /etc/apt/sources.list.d/mirrorsarchiveubuntu.list'
 
 apt-get autoclean
 
